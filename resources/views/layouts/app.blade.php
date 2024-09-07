@@ -6,10 +6,10 @@
     <title>@yield('title', 'Laravel Blog')</title>
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
-    <div class="container mt-5">
-        <header class="mb-5">
-            <h1 class="title">@yield('header', 'Blog')</h1>
+<body class="bg-gray-100 text-gray-900">
+    <div class="container mx-auto mt-8 p-6 bg-white rounded-lg shadow-md">
+        <header class="mb-6">
+            <h1 class="text-4xl font-bold">@yield('header', 'Blog')</h1>
         </header>
         <main>
             @yield('content')

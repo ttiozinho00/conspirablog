@@ -7,38 +7,29 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div class="container mt-5">
-        <h2 class="title is-3">Lista de Posts</h2>
-        <table class="table is-fullwidth">
+    <div class="container mx-auto mt-5">
+        <h2 class="text-3xl font-bold mb-5">Lista de Posts</h2>
+        <table class="min-w-full bg-white border border-gray-300">
             <thead>
-                <tr>
-                    <th>Título do Post</th>
-                    <th>Conteúdo Resumido</th>
-                    <th>Ações</th>
+                <tr class="bg-gray-100 border-b">
+                    <th class="py-2 px-4 text-left">Título do Post</th>
+                    <th class="py-2 px-4 text-left">Conteúdo Resumido</th>
                 </tr>
             </thead>
             <tbody>
                 @forelse ($posts as $post)
-                    <tr>
-                        <td>{{ $post->title }}</td>
-                        <td>{{ Str::limit($post->content, 100) }}</td>
-                        <td>
-                            <a href="{{ route('posts.edit', $post->id) }}" class="button is-link">Editar</a>
-                            <form action="{{ route('posts.destroy', $post->id) }}" method="POST" style="display: inline;">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="button is-danger" onclick="return confirm('Tem certeza que deseja excluir este post?')">Excluir</button>
-                            </form>
-                        </td>
+                    <tr class="border-b">
+                        <td class="py-2 px-4">{{ $post->title }}</td>
+                        <td class="py-2 px-4">{{ Str::limit($post->content, 100) }}</td>
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="3">Nenhum post encontrado.</td>
+                        <td colspan="2" class="py-2 px-4 text-center">Nenhum post encontrado.</td>
                     </tr>
                 @endforelse
             </tbody>
         </table>
-        <a href="{{ route('posts.create') }}" class="button is-primary">Criar Novo Post</a>
+        <a href="{{ route('posts.create') }}" class="inline-block mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Criar Novo Post</a>
     </div>
 </body>
 </html>

@@ -1,4 +1,5 @@
-import 'alpinejs';
-import '../css/app.css'; // Importa o CSS que inclui Bulma
-import './bootstrap'; // Mantenha outras configurações, se necessário
-import 'bulma/css/bulma.min.css';  // Importa Bulma
+/* resources/js/app.js */
+import 'bootstrap'; // Importa o Bootstrap
+import '../sass/app.scss'; // Importa o SCSS, onde o Bootstrap é carregado
+import 'alpinejs'; // Mantém o Alpine.js, se necessário
+import '../css/app.css'; // Importa o CSS que inclui Tailwind

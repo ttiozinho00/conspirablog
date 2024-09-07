@@ -1,4 +1,4 @@
-@import '~bootstrap/scss/bootstrap';
-
-
-
+@import '~bootstrap/scss/bootstrap'; // Importa o Bootstrap
+@import 'tailwindcss/base';          // Importa o Tailwind base
+@import 'tailwindcss/components';    // Importa os componentes do Tailwind
+@import 'tailwindcss/utilities';     // Importa as utilidades do Tailwind

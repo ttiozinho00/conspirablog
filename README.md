@@ -19,7 +19,6 @@ composer install
 php artisan migrate
 ```
 
-
 * iniciar o servidor
 
 ```

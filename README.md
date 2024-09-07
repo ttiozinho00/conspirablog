@@ -13,6 +13,13 @@ npm install ou yarn install
 composer install
 ```
 
+* após iniciar o bando de dados mysql.
+
+```
+php artisan migrate
+```
+
+
 * iniciar o servidor
 
 ```

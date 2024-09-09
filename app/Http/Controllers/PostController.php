@@ -30,8 +30,7 @@ class PostController extends Controller
 
         Post::create($request->all());
 
-        return redirect()->route('posts.index')
-                         ->with('success', 'Post created successfully.');
+        return redirect()->route('posts.index')->with('success', 'Post created successfully.');
     }
 
     public function edit(Post $post)
@@ -48,7 +47,12 @@ class PostController extends Controller
 
         $post->update($request->all());
 
-        return redirect()->route('posts.index')
-                         ->with('success', 'Post updated successfully.');
+        return redirect()->route('posts.index')->with('success', 'Post updated successfully.');
+    }
+
+    public function show($id)
+    {
+        $post = Post::findOrFail($id);
+        return view('posts.show', compact('post'));
     }
 }

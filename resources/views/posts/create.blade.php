@@ -1,6 +1,10 @@
+<!-- resources/views/posts/create.blade.php -->
 @extends('layouts.app')
 
 @section('content')
+    <!-- Link para o CSS específico desta página -->
+    <link rel="stylesheet" href="{{ asset('css/create-post.css') }}">
+
     <h2>Criar Novo Post</h2>
     <form action="{{ route('posts.store') }}" method="POST">
         @csrf

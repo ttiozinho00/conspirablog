@@ -1,6 +1,10 @@
+<!-- resources/views/posts/edit.blade.php -->
 @extends('layouts.app')
 
 @section('content')
+    <!-- Incluindo o CSS específico para a página de edição de posts -->
+    <link href="{{ asset('css/edit-post.css') }}" rel="stylesheet">
+
     <h2>Editar Post</h2>
     <form action="{{ route('posts.update', $post->id) }}" method="POST">
         @csrf

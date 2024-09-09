@@ -1,24 +1,36 @@
-<!-- resources/views/posts/index.blade.php -->
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-@section('content')
-    <!-- Incluindo o CSS específico para a lista de posts -->
-    <link href="{{ asset('css/index-post.css') }}" rel="stylesheet">
+    <title>{{ config('app.name', 'Conspira Blog') }}</title>
 
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @stack('styles') <!-- Pilha de estilos para incluir CSS específico de páginas -->
+</head>
+<body>
     <header>
-        <h1 class="text-3xl font-bold mb-6">Lista de Posts</h1>
-        <a href="{{ route('posts.create') }}" class="button">Criar Novo Post</a>
+        <h1>Conspira Blog</h1>
     </header>
-    
-    <div class="post-list container mx-auto mt-8 p-6">
-        @forelse ($posts as $post)
-            <div class="post">
-                <h3>{{ $post->title }}</h3>
-                <p class="post-content">{{ Str::limit($post->content, 100) }}</p>
-                <a href="{{ route('posts.show', $post->id) }}" class="post-button">Leia Mais</a>
-            </div>
-        @empty
-            <p>Nenhum post encontrado.</p>
-        @endforelse
+
+    <nav class="navbar">
+        <a href="{{ url('/') }}">Home</a>
+        <a href="{{ route('posts.index') }}">Posts</a>
+        <a href="{{ route('posts.create') }}">Criar Post</a>
+        
+        @if(isset($post))
+            <a href="{{ route('posts.edit', ['post' => $post->id]) }}">Editar Post</a>
+        @endif
+    </nav>
+
+    <div class="container">
+        @yield('content')
     </div>
-@endsection
+
+    <footer>
+        <p>&copy; {{ date('Y') }} Conspira Blog. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

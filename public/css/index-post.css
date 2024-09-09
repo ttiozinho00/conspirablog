@@ -22,29 +22,15 @@ header {
     border-bottom: 1px solid #ccc;
     padding: 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Centraliza horizontalmente */
     align-items: center;
     margin-bottom: 20px;
 }
 
 header h1 {
     font-size: 2rem;
-}
-
-header .button {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-header .button:hover {
-    background-color: #555;
+    text-align: center; /* Centraliza o texto dentro do h1 */
+    margin-bottom: 0; /* Remove margem inferior para ajustar a centralização */
 }
 
 /* Lista de Posts */
@@ -72,38 +58,47 @@ header .button:hover {
     margin-bottom: 10px;
 }
 
+/* Atualizando os botões com os estilos do app.css */
 .post-button {
     display: inline-block;
-    background-color: #333;
-    color: #fff;
-    padding: 8px 16px;
-    text-decoration: none;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px 20px;
     border-radius: 5px;
-    font-size: 0.9rem;
-    transition: background-color 0.3s;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
 .post-button:hover {
-    background-color: #555;
+    background-color: #0056b3;
 }
 
 /* Botão de criar novo post */
 .button {
     display: inline-block;
-    background-color: #333;
-    color: #fff;
+    background-color: #007bff;
+    color: #ffffff;
     padding: 10px 20px;
-    border: none;
     border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
     text-decoration: none;
-    transition: background-color 0.3s;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
     margin-top: 20px;
     text-align: center;
 }
 
 .button:hover {
-    background-color: #555;
+    background-color: #0056b3;
 }
 
+/* Rodapé */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}

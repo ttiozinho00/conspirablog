@@ -7,7 +7,6 @@
 
     <header>
         <h1 class="text-3xl font-bold mb-6">Lista de Posts</h1>
-        <a href="{{ route('posts.create') }}" class="button">Criar Novo Post</a>
     </header>
     
     <div class="post-list container mx-auto mt-8 p-6">

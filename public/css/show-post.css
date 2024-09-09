@@ -1,5 +1,3 @@
-/* show-post.css */
-
 /* Reset básico */
 * {
     margin: 0;
@@ -24,11 +22,11 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 800px;
     margin: 0 auto;
+    text-align: center; /* Centraliza o texto e botões dentro do container */
 }
 
 /* Título do post */
 h1 {
-    text-align: center;
     font-size: 2rem;
     margin-bottom: 20px;
 }
@@ -42,21 +40,20 @@ p {
 /* Botão */
 .button {
     display: inline-block;
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background-color 0.3s;
-    text-align: center;
-    margin-top: 20px;
-    display: block;
+    background-color: #007bff; /* Cor de fundo */
+    color: #ffffff; /* Cor do texto */
+    padding: 10px 20px; /* Padding para o botão */
+    border-radius: 5px; /* Bordas arredondadas */
+    text-decoration: none; /* Remove sublinhado */
+    font-weight: bold; /* Texto em negrito */
+    transition: background-color 0.3s ease; /* Transição suave para mudança de cor */
+    text-align: center; /* Centraliza o texto */
+    margin: 20px auto; /* Centraliza o botão e adiciona margem superior e inferior */
+    display: block; /* Faz com que o botão seja um bloco de nível de bloco */
+    width: fit-content; /* Ajusta a largura do botão ao seu conteúdo */
+    max-width: 200px; /* Define uma largura máxima se necessário */
 }
 
 .button:hover {
-    background-color: #555;
+    background-color: #0056b3; /* Cor de fundo ao passar o mouse */
 }
-

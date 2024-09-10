@@ -15,7 +15,7 @@ use App\Http\Controllers\PostController;
 */
 
 Route::get('/', function () {
-    return redirect()->route('posts.index');
+    return view('home'); // Exibe a view 'home.blade.php' na rota principal
 });
 
 Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
@@ -25,5 +25,6 @@ Route::get('/posts/{post}/edit', [PostController::class, 'edit'])->name('posts.e
 Route::put('/posts/{post}', [PostController::class, 'update'])->name('posts.update');
 Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
 Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
+
 
 

@@ -102,3 +102,92 @@ footer {
     margin-top: 20px;
     font-size: 0.9rem;
 }
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    header h1 {
+        font-size: 1.75rem;
+    }
+
+    .post h3 {
+        font-size: 1.25rem;
+    }
+
+    .post-content {
+        font-size: 0.9rem;
+    }
+
+    .button,
+    .post-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .post-list {
+        padding: 15px;
+    }
+
+    .post h3 {
+        font-size: 1.125rem;
+    }
+
+    .post-content {
+        font-size: 0.85rem;
+    }
+
+    .button,
+    .post-button {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+
+    footer {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.25rem;
+    }
+
+    .post {
+        padding: 8px;
+    }
+
+    .post h3 {
+        font-size: 1rem;
+    }
+
+    .post-content {
+        font-size: 0.8rem;
+    }
+
+    .button,
+    .post-button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    footer {
+        font-size: 0.7rem;
+    }
+}

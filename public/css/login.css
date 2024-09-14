@@ -1,0 +1,92 @@
+/* Corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Container de login */
+.login-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box; /* Garante que o padding é incluído na largura total */
+}
+
+/* Título do container de login */
+.login-container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Campos de entrada do container de login */
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Garante que o padding é incluído na largura total */
+}
+
+/* Botão do container de login */
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px; /* Tamanho de fonte padrão para o botão */
+    box-sizing: border-box; /* Garante que o padding é incluído na largura total */
+}
+
+.login-container button:hover {
+    background-color: #0056b3;
+}
+
+/* Mensagem de erro */
+.login-container .error {
+    color: red;
+    margin-bottom: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .login-container {
+        padding: 15px;
+    }
+
+    .login-container h1 {
+        font-size: 20px;
+    }
+
+    .login-container input,
+    .login-container button {
+        font-size: 14px; /* Ajusta o tamanho da fonte dos campos e botão */
+    }
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        padding: 10px;
+    }
+
+    .login-container h1 {
+        font-size: 18px;
+    }
+
+    .login-container input,
+    .login-container button {
+        font-size: 13px; /* Ajusta o tamanho da fonte dos campos e botão */
+    }
+}

@@ -130,3 +130,73 @@ footer {
     margin-top: 20px;
     font-size: 0.9rem;
 }
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .navbar a {
+        margin: 0 10px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .post h3 {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 0;
+    }
+
+    .navbar a {
+        display: block;
+        margin: 5px 0;
+        padding: 8px 0;
+    }
+
+    .post {
+        padding: 15px;
+    }
+
+    .post h3 {
+        font-size: 1.125rem;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 8px 0;
+    }
+
+    .navbar a {
+        font-size: 14px;
+        padding: 6px 0;
+    }
+
+    header h1 {
+        font-size: 1.75rem;
+    }
+
+    .post {
+        padding: 10px;
+    }
+
+    .post h3 {
+        font-size: 1rem;
+    }
+
+    footer {
+        font-size: 0.7rem;
+    }
+}

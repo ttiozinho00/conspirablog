@@ -1,4 +1,4 @@
-/*create-post.css*/
+/* create-post.css */
 
 /* Centralizar o título principal */
 h2 {
@@ -65,4 +65,59 @@ footer {
     margin-top: 20px;
     font-size: 14px;
     color: #888;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 24px;
+    }
+
+    form {
+        padding: 15px;
+    }
+
+    form label {
+        font-size: 16px;
+    }
+
+    form input[type="text"],
+    form textarea {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    form .button {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 20px;
+    }
+
+    form {
+        padding: 10px;
+    }
+
+    form label {
+        font-size: 14px;
+    }
+
+    form input[type="text"],
+    form textarea {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    form .button {
+        padding: 8px 14px;
+        font-size: 12px;
+    }
+
+    footer {
+        font-size: 12px;
+    }
 }

@@ -1,30 +1,42 @@
 <?php
-
-use Illuminate\Support\Facades\Route;
+/* conspirablog/routes/web.php */
+use App\Http\Controllers\AdminAuthController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
 */
 
+// Página inicial
 Route::get('/', function () {
     return view('home'); // Exibe a view 'home.blade.php' na rota principal
 });
 
+// Rotas de autenticação do admin (acessíveis sem autenticação)
+Route::get('/admin/login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
+Route::post('/admin/login', [AdminAuthController::class, 'login'])->name('admin.login.submit');
+
+// Rota de criação de usuário admin (também acessível sem autenticação para criar o primeiro admin)
+Route::get('/admin/users/create', [UserController::class, 'create'])->name('admin.users.create');
+Route::post('/admin/users', [UserController::class, 'store'])->name('admin.users.store');
+
+// Agrupamento de rotas para administradores autenticados
+Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/', [AdminController::class, 'index'])->name('index');
+    Route::delete('/posts/{id}', [AdminController::class, 'destroy'])->name('posts.destroy');
+
+    // Rotas para gerenciamento de usuários (somente para admins autenticados)
+    Route::get('/users', [UserController::class, 'index'])->name('users.index');
+});
+
+// Rotas públicas para posts
 Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
 Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
 Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 Route::get('/posts/{post}/edit', [PostController::class, 'edit'])->name('posts.edit');
 Route::put('/posts/{post}', [PostController::class, 'update'])->name('posts.update');
-Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
 Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
-
-
-

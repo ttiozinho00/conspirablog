@@ -1,5 +1,6 @@
 <?php
 /* conspirablog/routes/web.php */
+
 use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PostController;
@@ -20,6 +21,9 @@ Route::get('/', function () {
 Route::get('/admin/login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
 Route::post('/admin/login', [AdminAuthController::class, 'login'])->name('admin.login.submit');
 
+// Rota de logout do administrador
+Route::post('/admin/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
+
 // Rota de criação de usuário admin (também acessível sem autenticação para criar o primeiro admin)
 Route::get('/admin/users/create', [UserController::class, 'create'])->name('admin.users.create');
 Route::post('/admin/users', [UserController::class, 'store'])->name('admin.users.store');
@@ -29,17 +33,14 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::get('/', [AdminController::class, 'index'])->name('index');
     Route::delete('/posts/{id}', [AdminController::class, 'destroy'])->name('posts.destroy');
 
+    // Rota para listar posts
+    Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+
     // Rotas para gerenciamento de usuários (somente para admins autenticados)
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
-
-    // Rotas para gerenciamento de posts (somente para admins autenticados)
-    Route::get('/posts', [PostController::class, 'index'])->name('posts.index'); // Lista todos os posts
-    Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create'); // Exibe o formulário para criar um novo post
-    Route::post('/posts', [PostController::class, 'store'])->name('posts.store'); // Armazena um novo post
-    Route::get('/posts/{post}/edit', [PostController::class, 'edit'])->name('posts.edit'); // Exibe o formulário para editar um post
-    Route::put('/posts/{post}', [PostController::class, 'update'])->name('posts.update'); // Atualiza um post
-    Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show'); // Exibe os detalhes de um post
-    Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy'); // Remove um post
+    Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
+    Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
+    Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
 });
 
 // Rotas públicas para posts

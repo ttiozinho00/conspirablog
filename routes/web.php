@@ -31,6 +31,15 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
 
     // Rotas para gerenciamento de usuários (somente para admins autenticados)
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
+
+    // Rotas para gerenciamento de posts (somente para admins autenticados)
+    Route::get('/posts', [PostController::class, 'index'])->name('posts.index'); // Lista todos os posts
+    Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create'); // Exibe o formulário para criar um novo post
+    Route::post('/posts', [PostController::class, 'store'])->name('posts.store'); // Armazena um novo post
+    Route::get('/posts/{post}/edit', [PostController::class, 'edit'])->name('posts.edit'); // Exibe o formulário para editar um post
+    Route::put('/posts/{post}', [PostController::class, 'update'])->name('posts.update'); // Atualiza um post
+    Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show'); // Exibe os detalhes de um post
+    Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy'); // Remove um post
 });
 
 // Rotas públicas para posts

@@ -1,5 +1,6 @@
 <?php
-/*app/http/Controllers/UserController*/
+/* app/Http/Controllers/UserController.php */
+
 namespace App\Http\Controllers;
 
 use App\Models\User;
@@ -62,7 +63,6 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all(); // Lista todos os usuários
-
         return view('admin.index_users', compact('users'));
     }
 }

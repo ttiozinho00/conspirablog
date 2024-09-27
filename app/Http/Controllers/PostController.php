@@ -1,5 +1,5 @@
 <?php
-
+/*conspirablog/app/Http/Controllers/PostController.php*/
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller; 

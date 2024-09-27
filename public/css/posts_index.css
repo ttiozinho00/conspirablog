@@ -1,0 +1,111 @@
+/* public/css/posts_index.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Cor de fundo suave */
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px; /* Largura máxima do container */
+    margin: auto;
+    background-color: #ffffff; /* Fundo branco para o container */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    padding: 20px;
+}
+
+h1 {
+    text-align: center; /* Centraliza o título */
+    color: #333; /* Cor do texto do título */
+}
+
+/* Tabela */
+.table {
+    width: 100%; /* Tabela ocupa toda a largura */
+    border-collapse: collapse; /* Remove espaços entre as bordas */
+}
+
+.table th, .table td {
+    padding: 10px; /* Espaçamento interno das células */
+    text-align: left; /* Alinha texto à esquerda */
+    border-bottom: 1px solid #dee2e6; /* Borda inferior das células */
+}
+
+.table th {
+    background-color: #007bff; /* Cor de fundo do cabeçalho */
+    color: white; /* Cor do texto do cabeçalho */
+}
+
+.table tr:hover {
+    background-color: #f1f1f1; /* Cor de fundo ao passar o mouse */
+}
+
+/* Botões */
+.btn {
+    padding: 8px 12px; /* Espaçamento interno dos botões */
+    border: none;
+    border-radius: 4px; /* Bordas arredondadas nos botões */
+    cursor: pointer; /* Cursor em forma de mão ao passar o mouse */
+    font-size: 14px; /* Tamanho da fonte dos botões */
+}
+
+.btn-primary {
+    background-color: #007bff; /* Cor do botão primário */
+    color: white; /* Cor do texto do botão primário */
+}
+
+.btn-danger {
+    background-color: #dc3545; /* Cor do botão de deletar */
+    color: white; /* Cor do texto do botão de deletar */
+}
+
+.btn:hover {
+    opacity: 0.8; /* Efeito de hover nos botões */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px; /* Menos padding em telas pequenas */
+    }
+
+    h1 {
+        font-size: 24px; /* Reduz tamanho do título */
+    }
+
+    .table th, .table td {
+        padding: 8px; /* Menos padding nas células */
+        font-size: 14px; /* Tamanho da fonte das células */
+    }
+
+    .btn {
+        font-size: 12px; /* Reduz o tamanho da fonte dos botões */
+    }
+}
+
+@media (max-width: 480px) {
+    .table {
+        display: block; /* Tabela se torna um bloco */
+        overflow-x: auto; /* Permite rolagem horizontal */
+        white-space: nowrap; /* Impede a quebra de linha */
+    }
+
+    .table th, .table td {
+        display: block; /* Cada célula se torna um bloco */
+        text-align: right; /* Alinha texto à direita */
+        position: relative; /* Para uso de pseudo-elementos */
+        padding-left: 50%; /* Cria espaço para rótulos */
+    }
+
+    .table th::before, .table td::before {
+        content: attr(data-label); /* Rótulo a partir do atributo data-label */
+        position: absolute; /* Posiciona rótulo */
+        left: 10px; /* Espaço à esquerda */
+        width: calc(50% - 20px); /* Largura do rótulo */
+        white-space: nowrap; /* Impede a quebra de linha */
+        text-align: left; /* Alinha texto à esquerda */
+        font-weight: bold; /* Destaca rótulo */
+    }
+}

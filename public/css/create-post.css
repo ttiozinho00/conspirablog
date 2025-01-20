@@ -1,11 +1,22 @@
-/* create-post.css */
-
 /* Centralizar o título principal */
 h2 {
     text-align: center;
     margin-bottom: 20px;
     font-size: 28px;
     font-weight: bold;
+    color: #343a40; /* Cor mais escura para melhorar a legibilidade */
+    animation: fadeInTitle 1s ease-out; /* Animação ao carregar */
+}
+
+@keyframes fadeInTitle {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Estilo geral do formulário */
@@ -15,10 +26,27 @@ form {
     max-width: 500px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    animation: slideInForm 0.5s ease-out; /* Animação de entrada suave */
+}
+
+@keyframes slideInForm {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+form:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 /* Estilo dos rótulos */
@@ -28,18 +56,30 @@ form label {
     margin-top: 20px;
     font-size: 18px;
     text-align: left;
+    color: #495057;
 }
 
 /* Ajuste da borda e alinhamento dos campos de entrada de texto */
 form input[type="text"],
-form textarea {
-    width: calc(100% - 24px); /* Ajuste da largura para garantir alinhamento */
+form textarea,
+form select {
+    width: 100%;
     padding: 12px;
     margin-bottom: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
-    box-sizing: border-box; /* Garante que o padding seja incluído na largura total */
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito de foco nos campos de entrada */
+form input[type="text"]:focus,
+form textarea:focus,
+form select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+    outline: none;
 }
 
 /* Estilo do botão */
@@ -51,12 +91,68 @@ form .button {
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
     text-align: center;
 }
 
 form .button:hover {
     background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+form .button:active {
+    transform: translateY(1px);
+}
+
+/* Estilo para mensagens de feedback */
+form .message {
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 15px;
+    font-size: 14px;
+    display: none; /* Inicialmente oculto */
+}
+
+form .message.success {
+    background-color: #28a745;
+    color: white;
+}
+
+form .message.error {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Estilo para o campo de imagem (upload de imagem para post) */
+form .image-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+form .image-upload input[type="file"] {
+    display: none; /* Ocultar input de arquivo */
+}
+
+form .image-upload label {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+form .image-upload label:hover {
+    background-color: #0056b3;
+}
+
+form .image-upload img {
+    margin-top: 15px;
+    max-width: 200px;
+    border-radius: 8px;
 }
 
 /* Footer */

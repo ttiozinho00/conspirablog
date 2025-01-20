@@ -1,31 +1,47 @@
-/* home.css */
-
-body {
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'Arial', sans-serif;
-    background-color: #f0f4f8;
+}
+
+/* Corpo da página */
+body {
+    background-color: #f0f4f8; /* Cor suave de fundo */
     color: #333;
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    font-size: 16px; /* Tamanho padrão de fonte */
 }
 
+/* Títulos */
 h2 {
     color: #2c3e50;
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 20px;
+    font-size: 2rem;
+    letter-spacing: 1px; /* Espaçamento entre letras para ênfase */
+    animation: fadeIn 1s ease-in-out;
 }
 
 h3 {
     color: #2980b9;
     margin-bottom: 10px;
+    font-size: 1.5rem;
+    animation: fadeIn 1.2s ease-in-out;
 }
 
+/* Parágrafos */
 p {
     font-size: 1.1em;
     margin-bottom: 15px;
+    color: #555; /* Cor mais suave para melhor legibilidade */
 }
 
+/* Listas */
 ul {
     margin-bottom: 20px;
 }
@@ -33,12 +49,15 @@ ul {
 ul li {
     font-size: 1.1em;
     margin-bottom: 10px;
+    line-height: 1.6; /* Maior espaçamento entre itens da lista */
 }
 
+/* Links */
 a {
     color: #2980b9;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
 a:hover {
@@ -46,16 +65,23 @@ a:hover {
     text-decoration: underline;
 }
 
+a:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+}
+
+/* Fundo branco para container */
 .bg-white {
     background-color: #ffffff;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra mais suave */
     padding: 20px;
     max-width: 800px;
     margin: 30px auto;
     animation: fadeIn 1.5s ease-in-out;
 }
 
+/* Animação de FadeIn */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -67,14 +93,15 @@ a:hover {
     }
 }
 
+/* Estilo de textos */
 .text-2xl {
     font-size: 2em;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .text-xl {
     font-size: 1.5em;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .font-semibold {
@@ -87,6 +114,7 @@ a:hover {
 
 .text-blue-500 {
     color: #3498db;
+    transition: color 0.3s ease;
 }
 
 .text-blue-500:hover {
@@ -97,6 +125,7 @@ a:hover {
     text-align: center;
 }
 
+/* Padding e margens */
 .p-6 {
     padding: 1.5rem;
 }
@@ -109,18 +138,129 @@ a:hover {
     margin-bottom: 0.5rem;
 }
 
+/* Listas com marcadores */
 .list-disc {
     list-style-type: disc;
+    padding-left: 1.25rem; /* Ajuste para o espaçamento adequado */
 }
 
-.pl-5 {
-    padding-left: 1.25rem;
-}
-
+/* Estilo de sombra */
 .shadow-md {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra um pouco mais forte */
 }
 
+/* Bordas arredondadas */
 .rounded-lg {
     border-radius: 0.5rem;
+}
+
+/* Botões */
+.button {
+    background-color: #2980b9;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: #1abc9c;
+    transform: translateY(-2px);
+}
+
+.button:active {
+    transform: translateY(0);
+}
+
+/* Ícones de redes sociais */
+.social-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.social-buttons a {
+    margin: 0 10px;
+    padding: 12px;
+    background-color: #4267B2; /* Cor do Facebook */
+    border-radius: 50%;
+    color: white;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.social-buttons a:hover {
+    background-color: #365899;
+}
+
+/* Imagens Responsivas */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Bordas arredondadas para imagens */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 1.75rem; /* Reduzir o tamanho do título em telas menores */
+    }
+
+    h3 {
+        font-size: 1.25rem; /* Tamanho reduzido para subtítulos */
+    }
+
+    p, ul li {
+        font-size: 1em; /* Tamanho de fonte ajustado */
+    }
+
+    .bg-white {
+        padding: 15px; /* Reduzir o padding em dispositivos menores */
+    }
+
+    .button {
+        padding: 10px 20px;
+    }
+
+    .social-buttons a {
+        font-size: 1rem;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.5rem; /* Reduzir mais o título */
+    }
+
+    h3 {
+        font-size: 1.125rem; /* Tamanho ainda menor para subtítulos */
+    }
+
+    p, ul li {
+        font-size: 0.95em; /* Ajuste para melhor legibilidade */
+    }
+
+    .bg-white {
+        padding: 10px; /* Menos padding em dispositivos pequenos */
+    }
+
+    .button {
+        padding: 8px 16px;
+    }
+
+    .social-buttons a {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+}
+
+/* Acessibilidade adicional */
+a:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
 }

@@ -4,7 +4,6 @@
 
 ```
 npm install ou yarn install
-
 ```
 
 * instalar o pacote vendor caso não tenha no projeto.

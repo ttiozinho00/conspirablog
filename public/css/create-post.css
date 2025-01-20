@@ -143,6 +143,7 @@ form .image-upload label {
     border-radius: 4px;
     font-size: 16px;
     transition: background-color 0.3s ease;
+    display: inline-block; /* Para garantir que o botão tenha um tamanho adequado */
 }
 
 form .image-upload label:hover {
@@ -153,6 +154,23 @@ form .image-upload img {
     margin-top: 15px;
     max-width: 200px;
     border-radius: 8px;
+    object-fit: cover; /* Garante que a imagem se ajuste bem ao espaço */
+}
+
+/* Animações */
+@keyframes fadeInImage {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+form .image-upload img {
+    animation: fadeInImage 0.5s ease-out;
 }
 
 /* Footer */
